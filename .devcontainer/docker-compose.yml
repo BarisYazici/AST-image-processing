@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  astimp:
+    build: .
+    network_mode: "host"
+    privileged: true
+    command: /bin/bash
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../:/workspaces/src
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # - $XAUTHORITY:$XAUTHORITY
+    environment:
+      QT_X11_NO_MITSHM: 1
+      DISPLAY: $IP:0
+    user: $UID:$UID

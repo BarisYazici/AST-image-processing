@@ -23,12 +23,13 @@ add_library(
     include/improc-api.hpp
     include/pellet_label_recognition.hpp
     include/pellet_label_tflite_model.hpp
-        include/utils.hpp
+    include/utils.hpp
     src/astimp.cpp
     src/improc-api.cpp
     src/pellet_label_recognition.cpp
     src/pellet_label_recognition_ml.cpp
-        src/utils.cpp)
+    src/utils.cpp
+)
 
 if(NOT ANDROID_ABI)
     if(APPLE)
@@ -66,5 +67,5 @@ install(FILES include/pellet_label_recognition.hpp DESTINATION "${CUSTOM_INSTALL
 install(FILES include/astExceptions.hpp DESTINATION "${CUSTOM_INSTALL_DIR}/include")
 install(FILES include/stand_labels.hpp DESTINATION "${CUSTOM_INSTALL_DIR}/include")
 install(FILES ${CMAKE_BINARY_DIR}/astimplib/include/astimp_version.hpp DESTINATION "${CUSTOM_INSTALL_DIR}/include")
-## NOTE uninstall with:
+##   NOTE uninstall with:
 ## build$ xargs rm < install_manifest.txt

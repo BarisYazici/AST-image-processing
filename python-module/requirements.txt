@@ -2,4 +2,4 @@ Cython
 imageio
 matplotlib
 pyyaml
-numpy
+numpy==1.20
